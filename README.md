@@ -1,3 +1,10 @@
+# KINGUARD
+
+## Run
+
+Para correr el programa, dar npm run dev en una terminal dentro de la carpeta del proyecto
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

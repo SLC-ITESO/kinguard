@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Motor de Dgraph
+  dgraph:
+    image: dgraph/standalone:latest
+    container_name: dgraph_pap
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+      - "9080:9080"
+    volumes:
+      - dgraph_data:/dgraph
+
+  # UI Web de Dgraph (Ratel)
+  #
+  #ratel:
+  #  image: dgraph/ratel:latest
+  #  container_name: ratel_pap
+  #  restart: unless-stopped
+  #  ports:
+  #    - "8000:8000"
+
+  # Base de datos MongoDB
+  dbmongo:
+    image: mongo:latest
+    container_name: dbmongo_pap
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  dgraph_data:
+  mongo_data:
